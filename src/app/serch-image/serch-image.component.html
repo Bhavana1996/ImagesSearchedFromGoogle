@@ -1,0 +1,23 @@
+<div id="Img">
+  <form [formGroup]="searchForm" (ngSubmit)="searchImage(searchForm)">
+  <label class="form-control" for="word"><i>Keyword for Searching...</i></label>
+  <br/>
+  
+
+  <input type="text"
+        class="form-control"  placeholder="Enter a keyword"
+        formControlName="word"
+        id="word"
+        />
+        <br/>
+        
+  <div class="alert alert-danger" *ngIf="!word.valid && word.touched">
+    <span *ngIf="word.hasError('required')">
+        Please enter a keyword
+    </span>
+    <br/>
+    
+  </div>
+  <button class="btn btn-info">Get Images</button>
+</form>
+</div>
